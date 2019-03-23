@@ -2,4 +2,9 @@
 
 # Like append, but prefix the input with `\x1F` (Unit Separator) which
 # acts as a separator.
-printf "\x1F$(xsel --output)" | xsel --append --secondary
+input=$(xsel --output)
+if [ -z $(xsel --output --secondary) ] ; then
+    printf "\x1F$input" | xsel --input --secondary
+else
+    printf "\x1F$input" | xsel --append --secondary
+fi
