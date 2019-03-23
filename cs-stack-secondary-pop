@@ -1,0 +1,20 @@
+#!/usr/bin/env perl
+
+# Pop a value from secondary and put it in primary.
+use strict;
+use warnings;
+
+my $secondary = `xsel --output --secondary`;
+my $separator = "\x1F";
+
+my @list = split("$separator", $secondary);
+
+my $elem = pop @list;
+
+# debug
+print "elem: $elem";
+
+# populate primary
+`printf "$elem" | xsel --input`;
+
+# TODO return the shrunken list to secondary by using `join(_)`.
