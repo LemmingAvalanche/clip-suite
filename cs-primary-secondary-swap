@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Swap the contents of primary and secondary.
+xsel --exchange
