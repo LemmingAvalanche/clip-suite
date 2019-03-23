@@ -10,7 +10,7 @@
 # `--append` causes a segfault and secondary is not populated with
 # content.
 if [ -z $(xsel --output --secondary) ] ; then
-    printf "$@" | xsel --input --secondary
+    xsel --input --secondary
 else
-    printf "$@" | xsel --append --secondary
+    xsel --append --secondary
 fi
