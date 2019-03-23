@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Like append, but prefix the input with `\x1F` (Unit Separator) which
+# Like append, but suffix the input with `\x1F` (Unit Separator) which
 # acts as a separator.
 
-printf "\x1F$(xsel --output)" | ./aux-secondary-append
+printf "$(xsel --output)\x1F" | ./aux-secondary-append
