@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Append to secondary in a sensible way.  That is:
+#
+# • If secondary is empty, “replace” the empty secondary with standard
+#   in.
+# • Else if secondary is non-empty, append.
+#
+# Workaround for a bug (in my opinion) in `xsel`: if secondary is empty,
+# `--append` causes a segfault and secondary is not populated with
+# content.
+if [ -z $(xsel --output --secondary) ] ; then
+    printf "$@" | xsel --input --secondary
+else
+    printf "$@" | xsel --append --secondary
+fi
