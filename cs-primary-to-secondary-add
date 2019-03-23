@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Like append, but prefix the input with `\x1F` (Unit Separator) which
+# acts as a separator.
+printf "\x1F$(xsel --output)" | xsel --append --secondary
