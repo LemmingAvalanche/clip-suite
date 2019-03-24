@@ -1,19 +1,4 @@
-#!/usr/bin/env perl
+#!/bin/sh
 
 # Pop a value from secondary and put it in clipboard.
-use strict;
-use warnings;
-
-my $secondary = `xsel --output --secondary`;
-my $separator = "\x1F";
-
-my @list = split("$separator", $secondary);
-
-my $elem = pop @list;
-
-# populate primary
-`printf "$elem" | xsel --input --clipboard`;
-
-my $new_secondary = join("$separator", @list);
-# populate secondary
-`printf "$new_secondary" | xsel --input --secondary`;
+./cs-stack-secondary-pop | xsel --input --clipboard
