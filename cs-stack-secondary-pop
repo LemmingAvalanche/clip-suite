@@ -11,9 +11,6 @@ my @list = split("$separator", $secondary);
 
 my $elem = pop @list;
 
-# debug
-print "elem: $elem";
-
 # populate primary
 `printf "$elem" | xsel --input`;
 
