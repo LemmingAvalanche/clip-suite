@@ -1,6 +1,14 @@
 #!/bin/sh
 
-# Like append, but suffix the input with `\x1F` (Unit Separator) which
-# acts as a separator.
-
+# Append the content of primary to secondary.
+#
+# Secondary is treated like a list which elements are inserted from
+# primary.  The elements inserted by this script are separated by the
+# character `\x1F` (Unit Separator).  The separator cannot appear in the
+# incoming primary selection.  This is unlikely to happen since `\x1F`
+# is an ASCII control characte.
+#
+# § See also
+#
+# `cs-stack-secondary-pop` pops the values inserted with this script.
 printf "$(xsel --output)\x1F" | ./aux-secondary-append
