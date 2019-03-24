@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Send contents of the primary selection to the clipboard.
-#
-# state primary: noop
-# state clipboard: overwritten by primary
-xsel --output | xsel --input --clipboard

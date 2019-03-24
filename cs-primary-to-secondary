@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Send contents of the primary selection to the secondary selection.
-#
-# state primary: noop
-# state secondary: overwritten by primary
-xsel --output | xsel --input --secondary
