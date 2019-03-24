@@ -1,11 +1,17 @@
-* TODO fix scripts that use ~--append~
+* DONE fix scripts that use ~--append~
+  CLOSED: [2019-03-24 Sun 16:46]
 
+  - CLOSING NOTE [2019-03-24 Sun 16:46] \\
+    `aux-secondary-append` is the only script which uses `--append`.
 These scripts will not function correctly if the thing that is appended
 to (primary, secondary, or clipboard) is empty.  This is due to a (in my
 opinion) bug in ~xsel(1)~.
 
-* TODO Use Perl and ~split()~ to implement parsing
+* DONE Use Perl and ~split()~ to implement parsing
+  CLOSED: [2019-03-24 Sun 16:46]
 
+  - CLOSING NOTE [2019-03-24 Sun 16:46] \\
+    See r#a19a87d1ee3b (“Populate secondary”, 2019-03-24).
 Use Perl and ~split()~ to implement parsing of the contents of
 primary/secondary/clipboard.
 
