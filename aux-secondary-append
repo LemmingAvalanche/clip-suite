@@ -9,7 +9,7 @@
 # Workaround for a bug (in my opinion) in `xsel`: if secondary is empty,
 # `--append` causes a segfault and secondary is not populated with
 # content.
-if [ -z $(xsel --output --secondary) ] ; then
+if [ -z "$(xsel --output --secondary)" ] ; then
     xsel --input --secondary
 else
     xsel --append --secondary
