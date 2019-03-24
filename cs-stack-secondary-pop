@@ -5,6 +5,11 @@ use strict;
 use warnings;
 
 my $secondary = `xsel --output --secondary`;
+
+unless ($secondary) {
+    die "Error: secondary selection is empty."
+}
+
 my constant $separator = "\x1F";
 
 my @list = split("$separator", $secondary);
