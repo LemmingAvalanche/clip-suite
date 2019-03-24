@@ -1,0 +1,19 @@
+#!/usr/bin/env perl
+
+# Pop two values from secondary and format them as an inline Org-mode
+# link and put it in clipboard.
+#
+# Expected secondary state:
+#
+# 1. URL
+# 2. Description
+use strict;
+use warnings;
+
+my $link = `./cs-stack-secondary-pop`;
+my $description = `./cs-stack-secondary-pop`;
+
+my $output = "[[$link][$description]]";
+
+# Populate clipboard with the Markdown link.
+`printf "$output" | xsel --input --clipboard`
