@@ -17,4 +17,6 @@ print "elem: $elem";
 # populate primary
 `printf "$elem" | xsel --input`;
 
-# TODO return the shrunken list to secondary by using `join(_)`.
+my $new_secondary = join("$separator", @list);
+# populate secondary
+`printf "$new_secondary" | xsel --input --secondary`;
