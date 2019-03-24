@@ -1,3 +1,16 @@
+* TODO fix scripts that use ~--append~
+
+These scripts will not function correctly if the thing that is appended
+to (primary, secondary, or clipboard) is empty.  This is due to a (in my
+opinion) bug in ~xsel(1)~.
+
+* TODO Use Perl and ~split()~ to implement parsing
+
+Use Perl and ~split()~ to implement parsing of the contents of
+primary/secondary/clipboard.
+
+See: http://www.perlmeme.org/howtos/perlfunc/split_function.html
+
 * On that ~No newline at end of selection~ behavior
 
 https://unix.stackexchange.com/a/337335/185805
