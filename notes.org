@@ -1,0 +1,3 @@
+* On that ~No newline at end of selection~ behavior
+
+https://unix.stackexchange.com/a/337335/185805
